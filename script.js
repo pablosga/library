@@ -16,7 +16,7 @@ const myLibrary = [
         author: "Cal Newport",
         pages: 247,
         status: "Already Readed",
-    }
+    },
 ];
 
 function Book(title, author, pages, status) {
@@ -45,14 +45,17 @@ function printLibrary() {
         card.classList.add(bookIndex);
         for (item in book) {
             let text = document.createElement("div");
-            text.textContent = `${item}: ${book[item]}`;
+            text.textContent = `${item.toUpperCase()}: ${book[item]}`;
             card.appendChild(text);
         };
         bookIndex++;
-        createButtons(card, "delete");
         createButtons(card, "change")
+        createButtons(card, "delete");
     }
     createBookSection();
+    changeTextContent("Delete", "delete");
+    changeTextContent("Status", "change");
+    changeTextContent("Add Book", "add-book")
 };
 
 function createBookSection() {
@@ -108,6 +111,13 @@ document.querySelector("body").addEventListener("click", (e) => {
         }
     }
 });
+
+function changeTextContent (text, itemClass) {
+    let items = Array.from(document.getElementsByClassName(itemClass));
+    items.forEach((item) => item.textContent = text);
+};
+
+
 
 
 
