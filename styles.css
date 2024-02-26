@@ -107,3 +107,13 @@ form > div {
     margin-top: 20px;
     align-self: center;
 }
+
+dialog {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 2.5px white;
+}
+
+::backdrop {
+    background-color: #000000cc;
+}
