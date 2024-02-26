@@ -55,7 +55,8 @@ function printLibrary() {
     createBookSection();
     changeTextContent("Delete", "delete");
     changeTextContent("Status", "change");
-    changeTextContent("Add Book", "add-book")
+    changeTextContent("Add Book", "add-book");
+    if (myLibrary == "") voidContainer();
 };
 
 function createBookSection() {
@@ -118,7 +119,12 @@ function changeTextContent (text, itemClass) {
 };
 
 
-
+function voidContainer() {
+    let mainContainer = document.querySelector("main");
+    let voidCard = document.createElement("div");
+    voidCard.textContent = "Your library is empty, Let's add some books!"
+    mainContainer.appendChild(voidCard);
+}
 
 
 
